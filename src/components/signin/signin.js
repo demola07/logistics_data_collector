@@ -1,8 +1,9 @@
 import { useState } from "react";
-import "./registration.css";
+import "./signin.css";
 import { Formik, Form, Field } from "formik";
+import { useNavigate } from "react-router-dom";
 
-function RegistrationForm() {
+function SignInForm() {
   const [inputs, setInputs] = useState({});
 
   // function handleSubmit(event) {
@@ -17,11 +18,10 @@ function RegistrationForm() {
   // }
 
   const initialValues = {
-    username: "",
     email: "",
-    phone: "",
+    pa: "",
   };
-
+  const navigate = useNavigate();
   return (
     <div id="container">
       <Formik
@@ -32,10 +32,11 @@ function RegistrationForm() {
             // alert(JSON.stringify(values, null, 2));
             setSubmitting(false);
           }, 700);
+          navigate("/userdashboard/user-dashboard.js");
         }}
       >
         {({ values, isSubmitting }) => (
-          <Form id="registration">
+          <Form id="signin">
             {/* <div className="details">
             <label htmlFor="orgname" className="col-leftr">
               Organization Name:
@@ -104,12 +105,9 @@ function RegistrationForm() {
               <br></br>
             </div>
 
-            <div id="btn">
-              {/* <button type="reset" id="cancel">
-                Cancel
-              </button> */}
-              <button type="submit" id="register" disabled={isSubmitting}>
-                {isSubmitting ? "Loading..." : "Register"}
+            <div id="btn" className=''>
+              <button type="submit" id="log" disabled={isSubmitting}>
+                {isSubmitting ? "Loading..." : "Login"}
               </button>
             </div>
           </Form>
@@ -119,4 +117,4 @@ function RegistrationForm() {
   );
 }
 
-export default RegistrationForm;
+export default SignInForm;
