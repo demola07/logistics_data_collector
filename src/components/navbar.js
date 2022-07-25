@@ -1,14 +1,19 @@
-import { Link } from "react-router-dom";
-import "./navbar.css";
+import { Link } from 'react-router-dom'
+import './navbar.css'
 
-function NavBar() {
-  return (
-    <div id="topnav">
-      <Link to="/signin/signin.js" className="pages">
-        Sign In
-      </Link>
-    </div>
-  );
+const handleclick = (e) => {
+	e.preventDefault()
+	console.log('I will redirect to AWS Cognito')
 }
 
-export default NavBar;
+function NavBar() {
+	return (
+		<div id='topnav'>
+			<button onClick={handleclick} to='/signin/signin.js' className='pages'>
+				Sign In
+			</button>
+		</div>
+	)
+}
+
+export default NavBar
