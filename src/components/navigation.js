@@ -15,8 +15,8 @@ import NavBar from "./navbar";
 import { Formik, Form, Field } from "formik";
 
 function Navigation() {
-  //	const loggedIn = localStorage.getItem('loggedIn')
-  const loggedIn = true;
+  const loggedIn = localStorage.getItem("loggedIn");
+
   return (
     <div>
       <Router basename="/" id="container">
