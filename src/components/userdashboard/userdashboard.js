@@ -12,8 +12,8 @@ function UserDashboard() {
     console.log(location);
     const hash = location.hash;
     const regex = /(?<=id_token=).*(?=&access_token)/g;
-    const token = hash.match(regex)[0];
-//    console.log(hash);
+    const token = hash?.match(regex)[0];
+    //    console.log(hash);
     localStorage.setItem("id_token", token);
     //    setIsTenantAdmin(true);
   }, []);
