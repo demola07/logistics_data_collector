@@ -2,14 +2,20 @@ import { useState } from "react";
 import "./signin.css";
 import { Formik, Form, Field } from "formik";
 import { useNavigate } from "react-router-dom";
+import { useRef } from "react";
 
 function SignInForm() {
   const [inputs, setInputs] = useState({});
-
-  // function handleSubmit(event) {
-  //   event.preventDefault();
-  //   console.log(inputs);
-  // }
+  const email = useRef()
+  const phone = useRef()
+  function handleSubmit(event) {
+    if(email.current.value=="email@gmail.com"&&phone.current.value=="12345"){
+      localStorage.setItem("emaildata", "email@gmail.com")
+      localStorage.setItem("phonedata", "123455")
+    }
+    // event.preventDefault();
+    // console.log(inputs);
+  }
 
   // function handleChange(event) {
   //   const name = event.target.name;
