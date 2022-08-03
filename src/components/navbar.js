@@ -20,7 +20,7 @@ function NavBar() {
 
 	return (
 		<div id='topnav'>
-			{loggedIn ? (
+			{/* {loggedIn ? ( */}
 				<button
 					onClick={(e) => handleclick(e)}
 					to='/signin/signin.js'
@@ -28,11 +28,11 @@ function NavBar() {
 				>
 					Sign In
 				</button>
-			) : (
+			 {/*) : (*/}
 				<button onClick={(e) => handleSignout(e)} className='pages'>
 					Sign Out
 				</button>
-			)}
+			 {/*)}*/}
 		</div>
 	)
 }

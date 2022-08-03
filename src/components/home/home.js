@@ -12,7 +12,7 @@ function Home() {
         <div>
           <p>
             <strong>
-              Estmate your CO<sup>2</sup>Footprint
+              Estimate your CO<sup>2</sup>Footprint
             </strong>
           </p>
           <div className="topsection">
