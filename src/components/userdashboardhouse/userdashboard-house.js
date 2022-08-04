@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import './userdashboard-house.css'
 
+
+
 function HouseDashboard() {
 	const navigate = useNavigate()
 	const [houseData, setHouseData] = useState({})
