@@ -3,6 +3,7 @@ import chart from "../images/chart.png";
 import { useState } from "react";
 import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import IconsNav from "../IconNav";
 
 function UserDashboard() {
   const [isTenantAdmin, setIsTenantAdmin] = useState(false);
@@ -33,13 +34,7 @@ function UserDashboard() {
       )}
 
       <div id="userdash">
-        <div id="icons">
-          <i className="fa fa-home fsizeh"></i>
-          <i className="fa fa-car fsize"></i>
-          <i className="fa fa-bus fsize"></i>
-          <i className="fa fa-plane fsize"></i>
-          <i className="fa fa-train fsize"></i>
-        </div>
+        <IconsNav />
         <div id="imgdash">
           <table>
             <thead>

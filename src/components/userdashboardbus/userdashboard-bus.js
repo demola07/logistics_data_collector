@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import IconsNav from "../IconNav";
 import "./userdashboard-bus.css";
 
 function BusDashboard() {
@@ -26,18 +27,13 @@ function BusDashboard() {
     const name = event.target.name;
     const value = event.target.value;
     setBusData((values) => ({ ...values, [name]: value }));
+    localStorage.setItem("busData", JSON.stringify({ [name]: value }));
   }
 
   return (
     <div className="Usrb">
       <div id="userbusdash">
-        <div id="icons">
-          <i className="fa fa-home iconcolor fsizeh"></i>
-          <i className="fa fa-car iconcolor fsize"></i>
-          <i className="fa fa-bus active iconcolor fsize"></i>
-          <i className="fa fa-plane iconcolor fsize"></i>
-          <i className="fa fa-train iconcolor fsize"></i>
-        </div>
+        <IconsNav />
 
         <div id="datareg">
           <form action="" onSubmit={handleSubmit} id="powerdata">
@@ -60,7 +56,7 @@ function BusDashboard() {
               <br></br>
             </div>
 
-            <div id="btn">
+            {/* <div id="btn">
               <button type="reset" id="reset"></button>
               <button type="submit" id="calc" onClick={() => handleBack()}>
                 {" "}
@@ -69,7 +65,7 @@ function BusDashboard() {
               <button type="submit" id="calc" onClick={(e) => handleSubmit(e)}>
                 <Link to="/userdashboardcar/user-dasboard-car.js">Next</Link>
               </button>
-            </div>
+            </div> */}
           </form>
         </div>
 
