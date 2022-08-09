@@ -3,22 +3,23 @@ import { Link, useNavigate } from "react-router-dom";
 import IconsNav from "../IconNav";
 import "./userdashboard-airplane.css";
 
+
 function AirplaneDashboard() {
-  const navigate = useNavigate();
-  const [airplaneData, setAirplaneData] = useState({});
+	const navigate = useNavigate()
+	const [airplaneData, setAirplaneData] = useState({})
 
-  useEffect(() => {
-    const airplaneData = JSON.parse(localStorage?.getItem("airplaneData"));
-    console.log("td", airplaneData);
-    if (airplaneData) {
-      setAirplaneData(airplaneData);
-    }
-  }, []);
+	useEffect(() => {
+		const airplaneData = JSON.parse(localStorage?.getItem('airplaneData'))
+		console.log('td', airplaneData)
+		if (airplaneData) {
+			setAirplaneData(airplaneData)
+		}
+	}, [])
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    localStorage.setItem("airplaneData", JSON.stringify(airplaneData));
-  }
+	function handleSubmit(event) {
+		event.preventDefault()
+		localStorage.setItem('airplaneData', JSON.stringify(airplaneData))
+	}
 
   function handleChange(event) {
     const name = event.target.name;
@@ -63,13 +64,13 @@ function AirplaneDashboard() {
         </form>
       </div>
 
-      <div id="winclose">
-        <button type="submit" name="close" id="btnclose">
-          <i className="fa fa-times-circle-o"></i>
-        </button>
-      </div>
-    </div>
-  );
+			<div id='winclose'>
+				<button type='submit' name='close' id='btnclose'>
+					<i className='fa fa-times-circle-o'></i>
+				</button>
+			</div>
+		</div>
+	)
 }
 
-export default AirplaneDashboard;
+export default AirplaneDashboard

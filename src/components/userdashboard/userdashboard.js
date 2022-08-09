@@ -6,32 +6,32 @@ import { Link, useLocation } from "react-router-dom";
 import IconsNav from "../IconNav";
 
 function UserDashboard() {
-  const [isTenantAdmin, setIsTenantAdmin] = useState(false);
-  const location = useLocation();
+	const [isTenantAdmin, setIsTenantAdmin] = useState(false)
+	const location = useLocation()
 
-  useEffect(() => {
-    console.log(location);
-    const hash = location.hash;
-    const regex = /(?<=id_token=).*(?=&access_token)/g;
-    const match = hash.match(regex);
-    let token;
-    if (match) {
-      token = match[0];
-      localStorage.setItem("id_token", token);
-    }
-    // console.log(hash);
-    // console.log(token);
+	useEffect(() => {
+		console.log(location)
+		const hash = location.hash
+		const regex = /(?<=id_token=).*(?=&access_token)/g
+		const match = hash.match(regex)
+		let token
+		if (match) {
+			token = match[0]
+			localStorage.setItem('id_token', token)
+		}
+		// console.log(hash);
+		// console.log(token);
 
-    //    setIsTenantAdmin(true);
-  }, []);
+		//    setIsTenantAdmin(true);
+	}, [])
 
-  return (
-    <div className="cover">
-      {isTenantAdmin && (
-        <Link to="/admin/admin-login.js" className="btn-container">
-          Admin console
-        </Link>
-      )}
+	return (
+		<div className='cover'>
+			{isTenantAdmin && (
+				<Link to='/admin/admin-login.js' className='btn-container'>
+					Admin console
+				</Link>
+			)}
 
       <div id="userdash">
         <IconsNav />
@@ -80,4 +80,4 @@ function UserDashboard() {
   );
 }
 
-export default UserDashboard;
+export default UserDashboard
